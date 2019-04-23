@@ -1,0 +1,57 @@
+﻿@model Entities.Client
+
+@{
+    ViewBag.Title = "Main Page";
+}
+
+<h2>Your summary</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patronymic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patronymic)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Login)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditPersonInfo", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Log out", "LogOut", "LogInLogOut")
+</p>

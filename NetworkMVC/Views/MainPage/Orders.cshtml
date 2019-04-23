@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Entities.Order>
+
+@{
+    ViewBag.Title = "Orders";
+}
+
+<h2>Orders</h2>
+@Html.ActionLink("Create new", "CreateNew", "MainPage")
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDOrder)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDOrder)
+            </td>
+            <td>
+                <form action="~/Search/Details" method="post">
+                    <input type="hidden" name="IDOrder" id="IDOrder" value="@item.IDOrder" />
+                    <button type="submit" name="Remove">Remove</button>
+                </form>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,5 @@
+﻿CREATE VIEW Worker_UPDATE 
+AS 
+SELECT w.INN, w.Salary 
+FROM Worker w  
+WITH CHECK OPTION 
